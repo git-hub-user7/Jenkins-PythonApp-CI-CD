@@ -154,7 +154,7 @@ pipeline {
 
 
 - ### Output of the docker build command
- ![Output of the docker build command](Screenshots/changes-successful.png)
+  ![Output of the docker build command](Screenshots/changes-successful.png)
 
 ---
 
