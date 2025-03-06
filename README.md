@@ -39,43 +39,45 @@ cd Jenkins-PythonApp-CI-CD
 ├── Dockerfile          # Docker configuration
 └── Jenkinsfile         # Jenkins pipeline script
 ```
+
 3. **Docker Setup**
-Build the Docker Image:
+  Build the Docker Image:
 ```
-docker build -t dockerprovider/python-app:latest .
+  docker build -t dockerprovider/python-app:latest .
 ```
-Push to Docker Hub:
+  Push to Docker Hub:
 ```
-docker login
-docker push dockerprovider/python-app:latest
+  docker login
+  docker push dockerprovider/python-app:latest
 ```
+
 4. **Jenkins Pipeline Configuration**
 
 Install Plugins:
 
-📦GitHub Integration
+  📦GitHub Integration
 
-📦Docker Pipeline
+  📦Docker Pipeline
 
-📦Blue Ocean (optional)
+  📦Blue Ocean (optional)
 
 
 Create a Pipeline Job:
 
-Name: `python-app-pipeline`
+   🛠 Name: `python-app-pipeline`
 
-GitHub Repo URL: `https://github.com/git-hub-user7/Jenkins-PythonApp-CI-CD.git`
+   🛠 GitHub Repo URL: `https://github.com/git-hub-user7/Jenkins-PythonApp-CI-CD.git`
 
-Branch: `main`
+   🛠 Branch: `main`
 
-Script Path: `Jenkinsfile`
+   🛠 Script Path: `Jenkinsfile`
 
 
 Add Credentials to Jenkins:
 
-Docker Hub: Username + Personal Access Token (ID: `dockerhub-creds`).
+  🛠 Docker Hub: Username + Personal Access Token (ID: `dockerhub-creds`).
 
-GitHub: Personal Access Token (ID: `github-creds`).
+  🛠 GitHub: Personal Access Token (ID: `github-creds`).
 
 5. **Jenkinsfile**
 ```
@@ -116,13 +118,16 @@ pipeline {
 }
 ```
 6. **Automate with GitHub Webhook**
-Go to GitHub Repo → Settings → Webhooks.
 
-Add a webhook with:
+  🛠 Go to GitHub Repo → Settings → Webhooks.
 
-Payload URL: `http://<your-jenkins-ip>:8080/github-webhook/`
+  🛠 Add a webhook with:
 
-Trigger: Just the push event
+  🛠 Payload URL: `http://<your-jenkins-ip>:8080/github-webhook/`
+
+  🛠 Trigger: Just the push event
+
+--- 
 
 📸 **Screenshots** 
 images/jenkins-pipeline-success.png - Successful Jenkins pipeline stages.
@@ -133,12 +138,16 @@ images/pytest-results.png - Unit test results in Jenkins console.
 
 images/github-webhook.png - GitHub webhook configuration.
 
+---
+
 🔧 **Troubleshooting**
 Issue                     	    Solution
 Authentication failed----------Use Docker Hub/GitHub Personal Access Tokens.
 sh: command not found----------Replace sh with bat in Jenkinsfile.
 Docker push denied-------------Verify credentials in Jenkins.
 pytest not found---------------Install pytest globally: pip install pytest.
+
+---
 
 🖥 Technologies Used
 📦Jenkins (CI/CD Automation)
