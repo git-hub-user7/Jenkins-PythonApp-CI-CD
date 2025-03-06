@@ -30,7 +30,7 @@ This project demonstrates a **CI/CD pipeline** using Jenkins to automate the Doc
 git clone https://github.com/git-hub-user7/Jenkins-PythonApp-CI-CD.git
 cd Jenkins-PythonApp-CI-CD
 ```
-2. **Project Structure**
+### 2. **Project Structure**
 ```   
 ├── app/
 │   ├── app.py          # Flask application
@@ -40,20 +40,20 @@ cd Jenkins-PythonApp-CI-CD
 └── Jenkinsfile         # Jenkins pipeline script
 ```
 
-3. **Docker Setup**
-  Build the Docker Image:
+### 3. **Docker Setup**
+  **Build the Docker Image:**
 ```
   docker build -t dockerprovider/python-app:latest .
 ```
-  Push to Docker Hub:
+  **Push to Docker Hub:**
 ```
   docker login
   docker push dockerprovider/python-app:latest
 ```
 
-4. **Jenkins Pipeline Configuration**
+### 4. **Jenkins Pipeline Configuration**
 
-Install Plugins:
+**Install Plugins:**
 
   📦GitHub Integration
 
@@ -62,24 +62,24 @@ Install Plugins:
   📦Blue Ocean (optional)
 
 
-Create a Pipeline Job:
+**Create a Pipeline Job:**
 
-   🛠 Name: `python-app-pipeline`
+   Name: `python-app-pipeline`
 
-   🛠 GitHub Repo URL: `https://github.com/git-hub-user7/Jenkins-PythonApp-CI-CD.git`
+   GitHub Repo URL: `https://github.com/git-hub-user7/Jenkins-PythonApp-CI-CD.git`
 
-   🛠 Branch: `main`
+   Branch: `main`
 
-   🛠 Script Path: `Jenkinsfile`
+   Script Path: `Jenkinsfile`
 
 
-Add Credentials to Jenkins:
+**Add Credentials to Jenkins:**
 
-  🛠 Docker Hub: Username + Personal Access Token (ID: `dockerhub-creds`).
+  Docker Hub: Username + Personal Access Token (ID: `dockerhub-creds`).
 
-  🛠 GitHub: Personal Access Token (ID: `github-creds`).
+  GitHub: Personal Access Token (ID: `github-creds`).
 
-5. **Jenkinsfile**
+### 5. **Jenkinsfile**
 ```
 pipeline {
     agent any
@@ -117,19 +117,20 @@ pipeline {
     }
 }
 ```
-6. **Automate with GitHub Webhook**
+### 6. **Automate with GitHub Webhook**
 
-  🛠 Go to GitHub Repo → Settings → Webhooks.
+  Go to GitHub Repo → Settings → Webhooks.
 
-  🛠 Add a webhook with:
+  Add a webhook with:
 
-  🛠 Payload URL: `http://<your-jenkins-ip>:8080/github-webhook/`
+  Payload URL: `http://<your-jenkins-ip>:8080/github-webhook/`
 
-  🛠 Trigger: Just the push event
+  Trigger: Just the push event
 
 --- 
 
-📸 **Screenshots** 
+## 📸 **Screenshots** 
+
 images/jenkins-pipeline-success.png - Successful Jenkins pipeline stages.
 
 images/dockerhub-repository.png - Docker Hub repository with pushed image.
@@ -141,15 +142,16 @@ images/github-webhook.png - GitHub webhook configuration.
 ---
 
 🔧 **Troubleshooting**
-Issue                     	    Solution
-Authentication failed----------Use Docker Hub/GitHub Personal Access Tokens.
-sh: command not found----------Replace sh with bat in Jenkinsfile.
-Docker push denied-------------Verify credentials in Jenkins.
-pytest not found---------------Install pytest globally: pip install pytest.
+
+If authentication failed, use Docker Hub/GitHub Personal Access Tokens.
+If sh: command not found, replace sh with bat in Jenkinsfile.
+If docker push denied, verify credentials in Jenkins.
+If pytest not found, install pytest globally: pip install pytest.
 
 ---
 
 🖥 Technologies Used
+
 📦Jenkins (CI/CD Automation)
 
 📦Docker (Containerization)
@@ -157,3 +159,9 @@ pytest not found---------------Install pytest globally: pip install pytest.
 📦Python 3.12 (Flask Web Framework)
 
 📦GitHub (Version Control & Webhooks)
+
+## 👨‍💻 Author  
+**Dhwarakesh Srinivasan**  
+- 📧 Email: 'dhwarakesh99@gmail.com'  
+- 💼 LinkedIn: [www.linkedin.com/in/dhwarakesh-srinivasan-36171929](www.linkedin.com/in/dhwarakesh-srinivasan-36171929)  
+- 🐙 GitHub: [git-hub-user7](https://github.com/git-hub-user7)  
