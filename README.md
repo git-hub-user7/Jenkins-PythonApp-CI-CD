@@ -141,17 +141,14 @@ pipeline {
 
 ## 📸 **Screenshots** 
 
-- ### Successful Jenkins pipeline stages.
-  ![Successful Jenkins pipeline stages.](Screenshots/jenkins-pipeline-success.png) 
-
+- ### Output of the docker build command
+  ![Output of the docker build command](Screenshots/docker-build-output.png)
 
 - ### Docker Hub repository with pushed image.
   ![Docker Hub repository with pushed image.](Screenshots/dockerhub-repository.png) 
 
-
-- ### Output of the docker build command
-  ![Output of the docker build command](Screenshots/docker-build-output.png)
-
+- ### Successful Jenkins pipeline stages.
+  ![Successful Jenkins pipeline stages.](Screenshots/jenkins-pipeline-success.png) 
 
 - ### Testing Successful Syncing Result
   ![Testing Successful Syncing Result](Screenshots/changes-successful.png)
