@@ -36,6 +36,7 @@ cd Jenkins-PythonApp-CI-CD
 │   ├── app.py          # Flask application
 │   ├── test_app.py     # Unit tests
 │   └── requirements.txt
+├── Screenshots         # Contains Project Screensnaps 
 ├── Dockerfile          # Docker configuration
 └── Jenkinsfile         # Jenkins pipeline script
 ```
@@ -55,13 +56,13 @@ cd Jenkins-PythonApp-CI-CD
 
 **Install Plugins:**
 
-- 📦GitHub Integration
+- GitHub Integration
 
 
-- 📦Docker Pipeline
+- Docker Pipeline
 
 
-- 📦Blue Ocean (optional)
+- Blue Ocean (optional)
 
 
 
@@ -140,20 +141,24 @@ pipeline {
 
 ## 📸 **Screenshots** 
 
-- images/jenkins-pipeline-success.png - Successful Jenkins pipeline stages.
+- ### Successful Jenkins pipeline stages.
+  ![Successful Jenkins pipeline stages.](Screenshots/jenkins-pipeline-success.png) 
 
 
-- images/dockerhub-repository.png - Docker Hub repository with pushed image.
+- ### Docker Hub repository with pushed image.
+  ![Docker Hub repository with pushed image.](Screenshots/dockerhub-repository.png) 
 
 
-- images/pytest-results.png - Unit test results in Jenkins console.
+- ### Output of the docker build command
+  ![Output of the docker build command](Screenshots/docker-build-output.png)
 
 
-- images/github-webhook.png - GitHub webhook configuration.
+- ### Output of the docker build command
+ ![Output of the docker build command](Screenshots/changes-successful.png)
 
 ---
 
-🔧 **Troubleshooting**
+## 🔧 **Troubleshooting**
 
 - If authentication failed, use Docker Hub/GitHub Personal Access Tokens.
 
@@ -165,7 +170,7 @@ pipeline {
 
 ---
 
-🖥 Technologies Used
+## 🖥 Technologies Used
 
 📦Jenkins (CI/CD Automation)
 
@@ -176,7 +181,11 @@ pipeline {
 📦GitHub (Version Control & Webhooks)
 
 ## 👨‍💻 Author  
+
 **Dhwarakesh Srinivasan**  
+
 - 📧 Email: 'dhwarakesh99@gmail.com'  
+
 - 💼 LinkedIn: [www.linkedin.com/in/dhwarakesh-srinivasan-361719292](www.linkedin.com/in/dhwarakesh-srinivasan-361719292)  
+
 - 🐙 GitHub: [git-hub-user7](https://github.com/git-hub-user7)  
