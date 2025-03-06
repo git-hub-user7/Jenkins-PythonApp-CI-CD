@@ -153,8 +153,8 @@ pipeline {
   ![Output of the docker build command](Screenshots/docker-build-output.png)
 
 
-- ### Output of the docker build command
-  ![Output of the docker build command](Screenshots/changes-successful.png)
+- ### Testing Successful Syncing Result
+  ![Testing Successful Syncing Result](Screenshots/changes-successful.png)
 
 ---
 
