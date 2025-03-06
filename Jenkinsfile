@@ -4,11 +4,6 @@ pipeline {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-creds')
     }
     stages {
-        stage('Checkout') {
-            steps {
-                git branch: 'main', url: 'https://github.com/git-hub-user7/Jenkins-PythonApp-CI-CD.'
-            }
-        }
         stage('Test') {
             steps {
                 sh 'pytest app/test_app.py'
@@ -24,10 +19,11 @@ pipeline {
         stage('Push to Docker Hub') {
             steps {
                 script {
-                    docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-creds')
+                    docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-creds') {
                         dockerImage.push()
                     }
                 }
             }
         }
     }
+}
