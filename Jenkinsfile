@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'pytest app/test_app.py'
+                bat 'pytest app/test_app.py'
             }
         }
         stage('Build Docker Image') {
