@@ -27,7 +27,7 @@ This project demonstrates a **CI/CD pipeline** using Jenkins to automate the Doc
 
 ### 1. **Clone the Repository**  
 ```bash
-git clone https://github.com/<your-github-username>/Jenkins-PythonApp-CI-CD.git
+git clone https://github.com/git-hub-user7/Jenkins-PythonApp-CI-CD.git
 cd Jenkins-PythonApp-CI-CD
 ```
 2. **Project Structure**
@@ -42,31 +42,34 @@ cd Jenkins-PythonApp-CI-CD
 3. **Docker Setup**
 Build the Docker Image:
 ```
-docker build -t <your-dockerhub-username>/python-app:latest .
+docker build -t dockerprovider/python-app:latest .
 ```
 Push to Docker Hub:
 ```
 docker login
-docker push <your-dockerhub-username>/python-app:latest
+docker push dockerprovider/python-app:latest
 ```
 4. **Jenkins Pipeline Configuration**
+
 Install Plugins:
 
-GitHub Integration
+📦GitHub Integration
 
-Docker Pipeline
+📦Docker Pipeline
 
-Blue Ocean (optional)
+📦Blue Ocean (optional)
+
 
 Create a Pipeline Job:
 
 Name: `python-app-pipeline`
 
-GitHub Repo URL: `https://github.com/<your-github-username>/Jenkins-PythonApp-CI-CD.git`
+GitHub Repo URL: `https://github.com/git-hub-user7/Jenkins-PythonApp-CI-CD.git`
 
 Branch: `main`
 
 Script Path: `Jenkinsfile`
+
 
 Add Credentials to Jenkins:
 
@@ -85,7 +88,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main', 
-                url: 'https://github.com/<your-github-username>/Jenkins-PythonApp-CI-CD.git'
+                url: 'https://github.com/git-hub=user7/Jenkins-PythonApp-CI-CD.git'
             }
         }
         stage('Test') {
@@ -96,7 +99,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    dockerImage = docker.build("<your-dockerhub-username>/python-app:\${env.BUILD_ID}")
+                    dockerImage = docker.build("dockerprovider/python-app:\${env.BUILD_ID}")
                 }
             }
         }
@@ -131,7 +134,7 @@ images/pytest-results.png - Unit test results in Jenkins console.
 images/github-webhook.png - GitHub webhook configuration.
 
 🔧 **Troubleshooting**
-Issue                     	Solution
+Issue                     	    Solution
 Authentication failed----------Use Docker Hub/GitHub Personal Access Tokens.
 sh: command not found----------Replace sh with bat in Jenkinsfile.
 Docker push denied-------------Verify credentials in Jenkins.
