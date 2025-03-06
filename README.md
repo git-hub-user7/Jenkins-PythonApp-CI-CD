@@ -57,27 +57,36 @@ cd Jenkins-PythonApp-CI-CD
 
   📦GitHub Integration
 
+
   📦Docker Pipeline
 
+
   📦Blue Ocean (optional)
+
 
 
 **Create a Pipeline Job:**
 
    Name: `python-app-pipeline`
 
+
    GitHub Repo URL: `https://github.com/git-hub-user7/Jenkins-PythonApp-CI-CD.git`
 
+
    Branch: `main`
+
 
    Script Path: `Jenkinsfile`
 
 
 **Add Credentials to Jenkins:**
 
+
   Docker Hub: Username + Personal Access Token (ID: `dockerhub-creds`).
 
+
   GitHub: Personal Access Token (ID: `github-creds`).
+
 
 ### 5. **Jenkinsfile**
 ```
@@ -133,9 +142,12 @@ pipeline {
 
 images/jenkins-pipeline-success.png - Successful Jenkins pipeline stages.
 
+
 images/dockerhub-repository.png - Docker Hub repository with pushed image.
 
+
 images/pytest-results.png - Unit test results in Jenkins console.
+
 
 images/github-webhook.png - GitHub webhook configuration.
 
@@ -144,8 +156,11 @@ images/github-webhook.png - GitHub webhook configuration.
 🔧 **Troubleshooting**
 
 If authentication failed, use Docker Hub/GitHub Personal Access Tokens.
+
 If sh: command not found, replace sh with bat in Jenkinsfile.
+
 If docker push denied, verify credentials in Jenkins.
+
 If pytest not found, install pytest globally: pip install pytest.
 
 ---
@@ -163,5 +178,5 @@ If pytest not found, install pytest globally: pip install pytest.
 ## 👨‍💻 Author  
 **Dhwarakesh Srinivasan**  
 - 📧 Email: 'dhwarakesh99@gmail.com'  
-- 💼 LinkedIn: [www.linkedin.com/in/dhwarakesh-srinivasan-36171929](www.linkedin.com/in/dhwarakesh-srinivasan-36171929)  
+- 💼 LinkedIn: [www.linkedin.com/in/dhwarakesh-srinivasan-361719292](www.linkedin.com/in/dhwarakesh-srinivasan-361719292)  
 - 🐙 GitHub: [git-hub-user7](https://github.com/git-hub-user7)  
